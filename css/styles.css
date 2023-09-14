@@ -1,0 +1,165 @@
+body {
+    min-height: 100vh;
+    background-color: white;
+}
+
+.ui.segment.speed {
+    display: inline-block;
+}
+
+.ui.header {
+    padding: 8px;
+    padding-left: 10.5px;
+    color: white;
+}
+
+.ui.header>.image,
+.ui.header>img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.ui.icon {
+    padding: 0px;
+    display: inline-block;
+    position: relative;
+    bottom: 2px;
+}
+
+.ui.header>.image+.content,
+.ui.header>img+.content {
+    padding-left: 5px;
+}
+
+.form-range {
+    width: 100%;
+}
+
+i.icon {
+    margin-left: 5px;
+    font-size: 1.4rem;
+    margin-right: 3.5px;
+}
+
+.eRnhep {
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    box-shadow: rgb(0 0 0 / 15%) 0px 5px 30px 0px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.ui.segment.horzx {
+    padding: 0px;
+    margin: 0px;
+    white-space: nowrap;
+    overflow-x: auto;
+    position: relative;
+}
+
+.nums {
+    padding-left: px;
+    margin: 0;
+    position: absolute;
+    top: 42.5%;
+    left: 30px;
+    padding-right: 30px;
+}
+
+.form-range {
+    width: 90%;
+}
+
+.tab {
+    width: 20px;
+    display: inline-block;
+}
+
+.ui.segment.foot {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    z-index: 10;
+    margin: 0px;
+}
+
+
+/*
+.horzx::-webkit-scrollbar {
+    display: none;
+}
+
+.horzx {
+    -ms-overflow-style: none;
+ 
+    scrollbar-width: none;
+
+}*/
+
+@media (max-width:768px) {
+    .horzx {
+        min-height: 300px;
+    }
+    .marg {
+        margin-bottom: 30px;
+    }
+    .form-range {
+        width: 75%;
+    }
+    .algorithm {
+        overflow-y: scroll;
+        height: 300px;
+    }
+    .algorithm::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .algorithm {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+    .ch {
+        margin-bottom: 60px;
+    }
+}
+
+@media (min-width:768px) {
+    .horzx {
+        min-height: 343px;
+    }
+    .content.algo {
+        overflow-y: scroll;
+        height: 150px;
+    }
+    .content.algo::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .content.algo {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+}
+
+@media (max-width:576px) {
+    .ui.segment.speed {
+        display: none;
+    }
+    .ui.icon.sort {
+        margin-left: 5px;
+    }
+    .ui.icon.reset {
+        margin-left: 5px;
+    }
+}

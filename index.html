@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="./images/favcon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sorting Visualizer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1" />
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.7/components/icon.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+
+
+
+</head>
+
+<body>
+
+  
+
+    <nav class="navbar navbar-dark bg-dark" style="position:relative;">
+        <h2 class="ui header">
+            <img class="ui image" src="./images/header.gif">
+            <div class="content">
+                <a href="./index.html" style="color:white;">Sorting Visualizer</a>
+                  <a target="_blank" href="https://github.com/NikhileshBhagavan/-Sorting-Visualizer"><img src="./images/variation.png" style="height:40px;width:40px;position:absolute;right:15px;top:15px;z-index:10;" /></a>
+            </div>
+        </h2>
+    </nav>
+
+
+    <center>
+        <div class="ui five item menu" style="overflow-x:auto;width:96%;margin-top:20px;margin-bottom:15px;">
+            <a class="item Bubble">Bubble </a>
+            <a class="item Selection">Selection</a>
+            <a class="item Insertion">Insertion</a>
+            <a class="item Quick">Quick</a>
+            <a class="item Merge">Merge</a>
+
+        </div>
+
+        <div class="ui message" style="padding:0px;margin-left:calc(2%); margin-right:calc(2%);">
+            <div class="row" style="padding:0px;margin:0px; ">
+
+                <div class="col-sm-2 " style="padding:5px;padding-top:10px;">
+
+                    <button type="button" id="random" style="width:100%;" class="btn btn-primary">
+                        RANDOM
+                     </button>
+
+
+                </div>
+
+                <div class="col-sm-8 " style="padding:5px;padding-top:10px; ">
+
+                    <input type="number" placeholder="Size" id="size" class="form-control" style="width:70px;display:inline-block;">
+
+                    <input type="text" placeholder="Input" id="input" class="form-control" style="width:calc(100% - 80px);display:inline-block;">
+
+                </div>
+
+                <div class="col-sm-2 " style="padding:5px; ">
+
+                    <input type="range" class="form-range" min="800" max="4000" step="800" id="customRange3" value="3200">
+                    <div class="ui segment speed" style="background-color:#e9ecef;padding:0px;margin:0px;width:30px;position:relative;bottom:3px;">4x</div>
+
+
+                    <div class="ui icon sort" data-variation="inverted">
+                        <i class="play icon"></i>
+                    </div>
+                    <div style="display:none;" class="ui icon reset" data-variation="inverted">
+                        <i class="redo icon"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </center>
+
+    <div class="row" style="width:96%;padding:0px;margin:0px;margin-left:calc(2%); margin-right:calc(2%);margin-top:20px;margin-bottom:40px;">
+        <div class="col-md-8 marg" style="padding:5px;position:relative;">
+            <div class="ui segment" style="margin:0px;position:absolute;top:5px;left:5px;z-index:10;border-radius:0px;">
+                <b> Swaps : <span class="swaps">0</span></b>
+            </div>
+            <div class="ui segment" style="margin:0px;position:absolute;top:5px;right:5px;z-index:10;border-radius:0px;">
+                <b> Comparisons : <span class="comparisons">0</span></b>
+            </div>
+            <div class="ui segment horzx">
+
+
+                <div class="nums">
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+        <div class="col-md-4 ch sortinfo" id="Bubble" style="padding:5px;">
+            <div class="ui message">
+                <center>
+                    <h3> Bubble Sort </h3>
+                </center>
+
+            </div>
+            <div class="ui styled accordion" style="width:100%;">
+                <div class=" title algo  ">
+                    <i class="clipboard icon "></i> Algorithm
+                </div>
+                <div class=" content algo algorithm ">
+                    <div class="ui message">
+                        <p>
+                            <span class="headings_algo"><b>DESCRIPTION : </b></span>
+
+                            <br>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+                        </p>
+                        <b>BUBBLE-SORT(A, n) : </b><br>
+                        <pre>
+1. for j = n to 1
+2.   for i = 1 to p-1 
+3.       if A[i] > A[i+1] 
+4.           temp = A[i]
+5.           A[i] = A[i+1] 
+6.           A[i+1] = temp
+                        </pre>
+
+                    </div>
+                </div>
+                <div class=" title">
+                    <i class="clock icon"></i> Time Complexity
+                </div>
+                <div class=" content algo">
+                    <div class="ui message">
+                        <p> <b>Average Case : </b> Θ(n^n)<br><br>
+                            <b> Best Case : </b> Ω(n)<br>
+                            <br>
+                            <b>Worst Case : </b>O(n^n)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="title algo">
+                    <i class="space shuttle icon"></i> Space Complexity
+                </div>
+                <div class="content algo">
+                    <div class="ui message">
+                        <center>
+                            <b>OverAll Space Complexity <br>=<br> Auxiliary Space + Space taken by Input</b><br></center><br>
+                        <b>Auxiliary Space </b> is the extra space or temporary space used by an algorithm.<br><br>
+
+                        <b>Auxiliary Space : </b> O(1) <br>
+                        <b>Space Taken by Input : </b> O(n) <br>
+                        <b>OverAll Space Complexity : </b> O(n)<br>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 ch sortinfo" id="Selection" style="padding:5px;">
+            <div class="ui message">
+                <center>
+                    <h3> Selection Sort </h3>
+                </center>
+
+            </div>
+            <div class="ui styled accordion" style="width:100%;">
+                <div class=" title algo ">
+                    <i class="clipboard icon"></i> Algorithm
+                </div>
+                <div class=" content algo algorithm ">
+                    <div class="ui message">
+                        <p>
+                            <span class="headings_algo"><b>DESCRIPTION : </b></span>
+
+                            <br> The Selection Sort algorithm sorts an array by repeatedly finding the minimun element from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array. <br> 1) The subarray which
+                            is already sorted. <br> 2) Remaining subarray which is unsorted. <br>In every iteration of selection sort, the minimum element from the unsorted subarray is picked and moved to the sorted subarray.
+                        </p>
+                        <b>SELECTION-SORT(A, n) : </b><br>
+                        <pre>
+1. for i = 1 to n-1 
+2.   min = i 
+3.   for j = i+1 to n 
+4.       if A[j] < A[min]
+5.           min = j 
+6.   temp = A[min] 
+7.   A[min] = A[i] 
+8.   A[i] = temp
+                            </pre>
+
+                    </div>
+                </div>
+                <div class=" title">
+                    <i class="clock icon"></i> Time Complexity
+                </div>
+                <div class=" content algo">
+                    <div class="ui message">
+                        <p> <b>Average Case : </b>Θ(n^n)<br><br>
+                            <b> Best Case : </b>Ω(n^2)<br>
+                            <br>
+                            <b>Worst Case : </b>O(n^n)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="title algo">
+                    <i class="space shuttle icon"></i> Space Complexity
+                </div>
+                <div class="content algo">
+                    <div class="ui message">
+                        <center>
+                            <b>OverAll Space Complexity <br>=<br> Auxiliary Space + Space taken by Input</b><br></center><br>
+                        <b>Auxiliary Space </b> is the extra space or temporary space used by an algorithm.<br><br>
+
+                        <b>Auxiliary Space : </b> O(1) <br>
+                        <b>Space Taken by Input : </b> O(n) <br>
+                        <b>OverAll Space Complexity : </b> O(n)<br>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 ch sortinfo" id="Insertion" style="padding:5px;">
+            <div class="ui message">
+                <center>
+                    <h3> Insertion Sort </h3>
+                </center>
+
+            </div>
+            <div class="ui styled accordion" style="width:100%;">
+                <div class=" title algo ">
+                    <i class="clipboard icon"></i> Algorithm
+                </div>
+                <div class=" content algo algorithm ">
+                    <div class="ui message">
+                        <p>
+                            <span class="headings_algo"><b>DESCRIPTION : </b></span><br> Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an
+                            unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.</p>
+                        <b>INSERTION-SORT(A, n)</b><br>
+                        <pre>
+1. for i = 2 to n
+2.   v = A[i]
+3.   j = i 
+4.   while j>1 and A[j-1]>v
+5.       A[j] = A[j-1] 
+6.       A[j-1] = v 
+7.       j = j - 1
+                        </pre>
+                    </div>
+                </div>
+                <div class=" title">
+                    <i class="clock icon"></i> Time Complexity
+                </div>
+                <div class=" content algo">
+                    <div class="ui message">
+                        <p> <b>Average Case : </b>θ(n^2)<br><br>
+                            <b> Best Case : </b>Ω(n)<br>
+                            <br>
+                            <b>Worst Case : </b>O(n^2)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="title algo">
+                    <i class="space shuttle icon"></i> Space Complexity
+                </div>
+                <div class="content algo">
+                    <div class="ui message">
+                        <center>
+                            <b>OverAll Space Complexity <br>=<br> Auxiliary Space + Space taken by Input</b><br></center><br>
+                        <b>Auxiliary Space </b> is the extra space or temporary space used by an algorithm.<br><br>
+
+                        <b>Auxiliary Space : </b> O(1) <br>
+                        <b>Space Taken by Input : </b> O(n) <br>
+                        <b>OverAll Space Complexity : </b> O(n)<br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 ch sortinfo" id="Quick" style="padding:5px;">
+            <div class="ui message">
+                <center>
+                    <h3> Quick Sort </h3>
+                </center>
+
+            </div>
+            <div class="ui styled accordion" style="width:100%;">
+                <div class=" title algo ">
+                    <i class="clipboard icon"></i> Algorithm
+                </div>
+                <div class=" content algo algorithm ">
+                    <div class="ui message">
+                        <p><span class="headings_algo"><b>DESCRIPTION : </b></span><br>Quick sort is a highly efficient sorting algorithm and is based on partitioning of array of data into smaller arrays. A large array is partitioned into two arrays one
+                            of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.</p>
+
+                        <b>QUICKSORT(arr[], int low, int high)</b>
+                        <pre>
+1. if(low < high)
+2.      p = PARTITION(arr,low,high);
+3       QUICKSORT(arr,low,p - 1);
+4.      QUICKSORT(arr,p + 1,high);
+</pre> <b>PARTITION(arr,low,high)</b>
+                        <pre>
+1. pivot = arr[high];
+2. i = (low - 1);
+3.   for(j = low; j <= high - 1; j++)
+4.        if(arr[j] < pivot)
+5.            i = i + 1
+6.            swap(arr[i],arr[j])
+7.   swap(arr[i + 1],arr[high])
+8. return i + 1
+                           </pre>
+                    </div>
+                </div>
+                <div class=" title">
+                    <i class="clock icon"></i> Time Complexity
+                </div>
+                <div class=" content algo">
+                    <div class="ui message">
+                        <p> <b>Average Case : </b>θ(n log(n))<br><br>
+                            <b> Best Case : </b>Ω(n log(n))<br>
+                            <br>
+                            <b>Worst Case : </b>O(n^2)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="title algo">
+                    <i class="space shuttle icon"></i> Space Complexity
+                </div>
+                <div class="content algo">
+                    <div class="ui message">
+                        <center>
+                            <b>OverAll Space Complexity <br>=<br> Auxiliary Space + Space taken by Input</b><br></center><br>
+                        <b>Auxiliary Space </b> is the extra space or temporary space used by an algorithm.<br><br>
+                        <b><u>Average Case / Best Case :</u></b><br><br>
+                        <b>Auxiliary Space : </b> O(logn) <br>
+                        <b>Space Taken by Input : </b> O(n) <br>
+                        <b>OverAll Space Complexity : </b> O(n)<br>
+                        <br>
+                        <b><u>Worst Case : </u></b><br><br>
+                        <b>Auxiliary Space : </b> O(n) <br>
+                        <b>Space Taken by Input : </b> O(n) <br>
+                        <b>OverAll Space Complexity : </b> O(n)<br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 ch sortinfo" id="Merge" style="padding:5px;">
+            <div class="ui message">
+                <center>
+                    <h3> Merge Sort </h3>
+                </center>
+
+            </div>
+            <div class="ui styled accordion" style="width:100%;">
+                <div class=" title algo ">
+                    <i class="clipboard icon"></i> Algorithm
+                </div>
+                <div class=" content algo algorithm ">
+                    <div class="ui message">
+                        <p><span class="headings_algo"><b>DESCRIPTION : </b></span><br>Quick sort is a highly efficient sorting algorithm and is based on partitioning of array of data into smaller arrays. A large array is partitioned into two arrays one
+                            of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.</p>
+                        <b> MERGE-SORT (A,p,r)</b><br>
+                        <pre>
+1. if p < r
+2.   q=floor((p+r)/2)
+3.   MERGE-SORT(A,p,q)
+4.   MERGE-SORT(A,q+1,r)
+5.   MERGE(A,p,q,r) </pre><b>MERGE(A,p,q,r)</b><br>
+                        <pre>
+1. n1=q-p+1
+2. n2=r-q
+3. let L[1....n1+1] and R[1......n2+1] ne new arrays
+4. for i=1 to n1
+5.     L[i] = A[p+i-1]
+6. for j=1 to n2
+7.     R[j] = A[q+j]
+8. L[n1+1] = ∞
+9. R[n2+1] = ∞
+10. i = 1
+11. j = 1
+12. for k= p to r
+13.     if L[i]<=R[j]
+14.         A[k] = L[i]
+15.         i=i+1
+16.     else
+17.         A[k]=R[j]
+18.         j=j+1
+    </pre>
+                    </div>
+                </div>
+                <div class=" title">
+                    <i class="clock icon"></i> Time Complexity
+                </div>
+                <div class=" content algo">
+                    <div class="ui message">
+                        <p> <b>Average Case : </b>θ(n log(n))<br><br>
+                            <b> Best Case : </b>Ω(n log(n))<br>
+                            <br>
+                            <b>Worst Case : </b>O(n log(n))
+                    </div>
+                </div>
+
+                <div class="title algo">
+                    <i class="space shuttle icon"></i> Space Complexity
+                </div>
+                <div class="content algo">
+                    <div class="ui message">
+                        <center>
+                            <b>OverAll Space Complexity <br>=<br> Auxiliary Space + Space taken by Input</b><br></center><br>
+                        <b>Auxiliary Space </b> is the extra space or temporary space used by an algorithm.<br><br>
+
+                        <b>Auxiliary Space : </b> O(n) <br>
+                        <b>Space Taken by Input : </b> O(n) <br>
+                        <b>OverAll Space Complexity : </b> O(n)<br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="./js/index.js">
+    </script>
+</body>
+
+</html>
